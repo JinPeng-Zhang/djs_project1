@@ -6,20 +6,24 @@
 bool creatscoket(char *ip,int port);
 int str_2ip_port(char* str, char** ip, int* port);
 int time();
+/*
+* 实现流程主要是绑定好套接字，然后发送消息，等待接收消息
+*/
 int main(int argc,char **argv) {
 
 	char* ip;
 	int port;
 	if(argc==2 && !str_2ip_port(argv[1], &ip, &port))
 	creatscoket(ip,port);
-
+	
 	return 0;
 }
+//需要重新考虑套接字创建是否需要写到主函数里面（个人倾向）
 bool creatscoket(char *ip,int port) {
 	WSADATA wsaData;
 	if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 		printf("WSAStartup() error!");
-
+	//这里使用的是TCP报文通信，SOCK_DGRAM为UDP
 	 SOCKET s = socket(AF_INET, SOCK_STREAM, 0);
 	 SOCKET new_s;
 	 struct sockaddr_in saddr,new_addr;
@@ -37,8 +41,8 @@ bool creatscoket(char *ip,int port) {
 
 	 char message[] = "Hello World!";
 	 send(new_s, message, sizeof(message), 0);
-
-		// ErrorHandling("listen() error");
+	 
+	 //ErrorHandling("listen() error");
      return false;
 }
 int str_2ip_port(char* str, char** ip, int* port) {
