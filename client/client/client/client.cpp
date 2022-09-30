@@ -1,4 +1,5 @@
 #include<stdio.h>
+
 #include<winsock.h>
 int str_2ip_port(char* str, char** ip, int* port);
 int main(int argc,char* argv[]) {
