@@ -1,0 +1,4 @@
+﻿  client.cpp
+D:\visual_studio\project\djs_projetc1\client\client\client\client.cpp(18,9): warning C4101: “new_s”: 未引用的局部变量
+D:\visual_studio\project\djs_projetc1\client\client\client\client.cpp(19,28): warning C4101: “new_addr”: 未引用的局部变量
+  client.vcxproj -> D:\visual_studio\project\djs_projetc1\client\client\x64\Debug\client.exe

@@ -1,0 +1,8 @@
+1.在调用socket代码编译报错：
+error LNK2019: 无法解析的外部符号 socket,函数
+解决：配置VS项目属性，在连接器->输入->添加依赖项 加入ws2_32.lib
+https://blog.csdn.net/qq1841370452/article/details/82721549
+2.bind失败返回-1
+windows配置套接字前需要启动初始化WASAtarup()
+WSADATA wsaData;
+WSAStartup(MAKEWORD(2, 2), &wsaData)
