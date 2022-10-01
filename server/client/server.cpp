@@ -5,11 +5,11 @@
 
 
 int str_2ip_port(char* str, char** ip, int* port);
-int time();
+void get_time(struct timer *t);
 
 struct timer {
-	int second;
-	int millisecond;
+	time_t second;
+	WORD millisecond;
 };
 /*
 * 实现流程主要是绑定好套接字，然后发送消息，等待接收消息
@@ -27,7 +27,7 @@ int main(int argc,char **argv) {
 		SOCKET s = socket(AF_INET, SOCK_STREAM, 0);
 		SOCKET new_s;
 		struct sockaddr_in saddr, new_addr;
-
+		struct timer t_old, t_new;
 		memset(&saddr, 0, sizeof(saddr));
 		saddr.sin_family = AF_INET;
 		saddr.sin_addr.s_addr = inet_addr(ip);
@@ -40,12 +40,16 @@ int main(int argc,char **argv) {
 		new_s = accept(s, (SOCKADDR*)&new_addr, &szClntAddr);
 
 		char message[] = "Hello World!";
+		get_time(&t_old);
 		send(new_s, message, sizeof(message), 0);
-		printf("i send:%s\n", message);
+		printf("i send:%s at %d:%d\n", message,t_old.second,t_old.millisecond);
 		char* recvmess = (char*)malloc(sizeof(char) * strlen(message));
 		recv(new_s, recvmess, 20, 0);
-		printf("i recv:%s\n", recvmess);
+		Sleep(1);
+		get_time(&t_new);
+		printf("i recv:%s at %d:%d\n", recvmess,t_new.second,t_new.millisecond);
 	}
+
 	return 0;
 }
 
@@ -62,22 +66,11 @@ int str_2ip_port(char* str, char** ip, int* port) {
 	return 0;
 }
 
-int time()
+void get_time(struct timer *t)
 {
-	char point = '.';
-	//获取秒
-	time_t tt;
-	time(&tt);
-	char* s = (char *)malloc(sizeof(char)*10);
-	itoa((int)tt,s,10);
-	//获取毫秒
+	time(&(t->second));
 	SYSTEMTIME t1;
 	GetSystemTime(&t1);
-	char* ms = (char*)malloc(sizeof(char) * 3);
-	itoa((int)t1.wMilliseconds, ms, 10);
+	t->millisecond = t1.wMilliseconds;
 
-	strcat(s, ".");
-	strcat(s, ms);
-
-	return strlen(s);
 }
