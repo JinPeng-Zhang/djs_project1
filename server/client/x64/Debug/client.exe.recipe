@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\visual_studio\project\djs_projetc1\server\x64\Debug\client.exe</FullPath>
+      <FullPath>D:\djs_project1\server\x64\Debug\client.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

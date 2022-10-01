@@ -1,3 +1,3 @@
 ﻿  server.cpp
-D:\visual_studio\project\djs_projetc1\server\client\server.cpp(75,18): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
-  client.vcxproj -> D:\visual_studio\project\djs_projetc1\server\x64\Debug\client.exe
+D:\djs_project1\server\client\server.cpp(82,18): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+  client.vcxproj -> D:\djs_project1\server\x64\Debug\client.exe

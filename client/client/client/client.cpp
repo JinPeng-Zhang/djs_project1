@@ -25,8 +25,10 @@ int main(int argc,char* argv[]) {
 	saddr.sin_port = htons(1234);
 	connect(s, (SOCKADDR*)&saddr, sizeof(saddr));
 
-	char message[30];
-	recv(s, message, sizeof(message) - 1, 0);
+	char *message = (char *)malloc(sizeof(char)*20);
+	recv(s, message, 17, 0);
+	send(s, message,17, 0);
+	printf("Message from server: %s \n", message);
 	printf("Message from server: %s \n", message);
 	return 0;
 }
