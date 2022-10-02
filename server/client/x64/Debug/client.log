@@ -1,10 +1,10 @@
 ﻿  server.cpp
-D:\djs_project1\server\client\server.cpp(59,10): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 2 拥有了类型“time_t”
-D:\djs_project1\server\client\server.cpp(59,10): message : 请考虑在格式字符串中使用“%lld”
-D:\djs_project1\server\client\server.cpp(59,10): message : 请考虑在格式字符串中使用“%Id”
-D:\djs_project1\server\client\server.cpp(59,10): message : 请考虑在格式字符串中使用“%I64d”
-D:\djs_project1\server\client\server.cpp(64,10): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 2 拥有了类型“time_t”
-D:\djs_project1\server\client\server.cpp(64,10): message : 请考虑在格式字符串中使用“%lld”
-D:\djs_project1\server\client\server.cpp(64,10): message : 请考虑在格式字符串中使用“%Id”
-D:\djs_project1\server\client\server.cpp(64,10): message : 请考虑在格式字符串中使用“%I64d”
+D:\djs_project1\server\client\server.cpp(64,11): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 2 拥有了类型“time_t”
+D:\djs_project1\server\client\server.cpp(64,11): message : 请考虑在格式字符串中使用“%lld”
+D:\djs_project1\server\client\server.cpp(64,11): message : 请考虑在格式字符串中使用“%Id”
+D:\djs_project1\server\client\server.cpp(64,11): message : 请考虑在格式字符串中使用“%I64d”
+D:\djs_project1\server\client\server.cpp(68,11): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 2 拥有了类型“time_t”
+D:\djs_project1\server\client\server.cpp(68,11): message : 请考虑在格式字符串中使用“%lld”
+D:\djs_project1\server\client\server.cpp(68,11): message : 请考虑在格式字符串中使用“%Id”
+D:\djs_project1\server\client\server.cpp(68,11): message : 请考虑在格式字符串中使用“%I64d”
   client.vcxproj -> D:\djs_project1\server\x64\Debug\client.exe

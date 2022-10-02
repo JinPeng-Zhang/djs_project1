@@ -11,14 +11,16 @@ struct timer {
 	time_t second;
 	WORD millisecond;
 };
+
+
 /*
 * 实现流程主要是绑定好套接字，然后发送消息，等待接收消息
 */
 int main(int argc,char **argv) {
 
-	char* ip;
-	int port;
-	if (argc == 2 && !str_2ip_port(argv[1], &ip, &port))
+	char* ip;int port;
+	int cnt = 30;
+	if (argc >1 && !str_2ip_port(argv[1], &ip, &port))
 	{
 		//windows启动 socket服务
 		WSADATA wsaData;
@@ -54,14 +56,17 @@ int main(int argc,char **argv) {
 		}
 
 		char message[] = "Hello World!";
-		get_time(&t_old);
-		send(new_s, message, sizeof(message), 0);
-		printf("i send:%s at %d:%d\n", message,t_old.second,t_old.millisecond);
-		char* recvmess = (char*)malloc(sizeof(char) * strlen(message));
-		recv(new_s, recvmess, 20, 0);
-		//Sleep(1);
-		get_time(&t_new);
-		printf("i recv:%s at %d:%d\n", recvmess,t_new.second,t_new.millisecond);
+		char* recvmess = (char*)malloc(sizeof(message));
+		//message[0] = 0x36;
+		while (cnt--) {
+			get_time(&t_old);
+			send(new_s, message, sizeof(message), 0);
+			printf("i send:%s at %d:%d and", message, t_old.second, t_old.millisecond);
+			recv(new_s, recvmess, 20, 0);
+			//Sleep(1);
+			get_time(&t_new);
+			printf("i recv:%s at %d:%d\n", recvmess, t_new.second, t_new.millisecond);
+		}
 	}
 
 	return 0;

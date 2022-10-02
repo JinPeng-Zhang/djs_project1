@@ -1,9 +1,9 @@
 ﻿  client.cpp
-D:\djs_project1\client\client\client\client.cpp(44,38): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
-D:\djs_project1\client\client\client\client.cpp(45,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 2 拥有了类型“time_t”
-D:\djs_project1\client\client\client\client.cpp(45,9): message : 请考虑在格式字符串中使用“%lld”
-D:\djs_project1\client\client\client\client.cpp(45,9): message : 请考虑在格式字符串中使用“%Id”
-D:\djs_project1\client\client\client\client.cpp(45,9): message : 请考虑在格式字符串中使用“%I64d”
+D:\djs_project1\client\client\client\client.cpp(42,42): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\djs_project1\client\client\client\client.cpp(43,10): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 2 拥有了类型“time_t”
+D:\djs_project1\client\client\client\client.cpp(43,10): message : 请考虑在格式字符串中使用“%lld”
+D:\djs_project1\client\client\client\client.cpp(43,10): message : 请考虑在格式字符串中使用“%Id”
+D:\djs_project1\client\client\client\client.cpp(43,10): message : 请考虑在格式字符串中使用“%I64d”
 D:\djs_project1\client\client\client\client.cpp(25,9): warning C4101: “new_s”: 未引用的局部变量
 D:\djs_project1\client\client\client\client.cpp(26,28): warning C4101: “new_addr”: 未引用的局部变量
   client.vcxproj -> D:\djs_project1\client\client\x64\Debug\client.exe

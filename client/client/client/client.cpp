@@ -3,6 +3,7 @@
 #include <time.h>
 //消息长度最大值
 #define mess_max 512
+
 int str_2ip_port(char* str, char** ip, int* port);
 void get_time(struct timer* t);
 struct timer {
@@ -10,10 +11,9 @@ struct timer {
 	WORD millisecond;
 };
 int main(int argc,char* argv[]) {
-	if (argc!=2)
-		return 0;
-	char* ip;
-	int port;
+	if (argc!=2) return 0;
+	char* ip;int port;
+	int cnt = 30;
 	if (str_2ip_port(argv[1], &ip, &port))
 		return 0;
 	//windows启动socket服务
@@ -35,14 +35,13 @@ int main(int argc,char* argv[]) {
 		printf("connect feiled\n");
 		return 0;
 	}
-
 	char* message = (char*)malloc(sizeof(char) * 20);
-	recv(s, message, 17, 0);
-	
-	get_time(&t);
-
-	send(s, message,strlen(message)+1, 0);
-	printf("Message from server: %s at %d:%d\n", message,t.second,t.millisecond);
+	while (cnt--) {
+		recv(s, message, 20, 0);
+		get_time(&t);
+		send(s, message, strlen(message) + 1, 0);
+		printf("Message from server: %s at %d:%d\n", message, t.second, t.millisecond);
+	}
 	return 0;
 }
 int str_2ip_port(char* str, char** ip, int* port) {
