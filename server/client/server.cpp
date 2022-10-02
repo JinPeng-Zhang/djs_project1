@@ -21,7 +21,7 @@ int main(int argc,char **argv) {
 	get_time(&t_old);
 	//FILE *f =  fopen(itoa(t_old.second),"rb+")
 	char* ip;int port;
-	int cnt = 30;
+	int cnt = 30;//发送次数
 	if (argc >1 && !str_2ip_port(argv[1], &ip, &port))
 	{
 		//windows启动 socket服务
