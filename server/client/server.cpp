@@ -5,6 +5,7 @@
 
 int str_2ip_port(char* str, char** ip, int* port);
 void get_time(struct timer *t);
+//将一个timer结构体转化为 “second.txt”字符串
 char* get_time_str(char* s, struct timer t);
 
 struct timer {
