@@ -3,9 +3,9 @@
 #include<string.h>
 #include <time.h>
 
-
 int str_2ip_port(char* str, char** ip, int* port);
 void get_time(struct timer *t);
+char* get_time_str(char* s, struct timer t);
 
 struct timer {
 	time_t second;
@@ -17,7 +17,9 @@ struct timer {
 * 实现流程主要是绑定好套接字，然后发送消息，等待接收消息
 */
 int main(int argc,char **argv) {
-
+	struct timer t_old, t_new;
+	get_time(&t_old);
+	//FILE *f =  fopen(itoa(t_old.second),"rb+")
 	char* ip;int port;
 	int cnt = 30;
 	if (argc >1 && !str_2ip_port(argv[1], &ip, &port))
@@ -30,7 +32,6 @@ int main(int argc,char **argv) {
 		SOCKET s = socket(AF_INET, SOCK_STREAM, 0);
 		SOCKET new_s;
 		struct sockaddr_in saddr, new_addr;
-		struct timer t_old, t_new;
 
 		memset(&saddr, 0, sizeof(saddr));
 		saddr.sin_family = AF_INET;
@@ -92,4 +93,7 @@ void get_time(struct timer *t)
 	GetSystemTime(&t1);
 	t->millisecond = t1.wMilliseconds;
 
+}
+char* get_time_str(char *s,struct timer t) {
+	return s;
 }
