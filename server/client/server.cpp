@@ -6,25 +6,33 @@
 int str_2ip_port(char* str, char** ip, int* port);
 void get_time(struct timer *t);
 //将一个timer结构体转化为 “second.txt”字符串
-char* get_time_str(char* s, struct timer t);
-
+char* get_delayfile_path(char* s, struct timer t);
+//延时测量结果保存路径
+char delay_file_path[] = "D:\\djs_project1\\delay\\";
 struct timer {
 	time_t second;
 	WORD millisecond;
 };
 
-
 /*
 * 实现流程主要是绑定好套接字，然后发送消息，等待接收消息
 */
 int main(int argc,char **argv) {
-	struct timer t_old, t_new;
-	get_time(&t_old);
-	//FILE *f =  fopen(itoa(t_old.second),"rb+")
+	struct timer ttime;
+	
+	
 	char* ip;int port;
 	int cnt = 30;//发送次数
 	if (argc >1 && !str_2ip_port(argv[1], &ip, &port))
 	{
+		//打开文件记录30次通信信息
+		get_time(&ttime);
+		char* file = (char*)malloc(sizeof(char) * 12);
+		get_delayfile_path(file, ttime);
+		FILE* f = fopen(file, "w");
+		if (f == NULL) { printf("file feiled\n"); return 0; }
+
+
 		//windows启动 socket服务
 		WSADATA wsaData;
 		if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
@@ -61,14 +69,17 @@ int main(int argc,char **argv) {
 		char* recvmess = (char*)malloc(sizeof(message));
 		//message[0] = 0x36;
 		while (cnt--) {
-			get_time(&t_old);
+			get_time(&ttime);
+			fprintf(f, "%d:%d||", ttime.second, ttime.millisecond);
 			send(new_s, message, sizeof(message), 0);
-			printf("i send:%s at %d:%d and", message, t_old.second, t_old.millisecond);
+			printf("i send:%s at %d:%d and", message, ttime.second, ttime.millisecond);
 			recv(new_s, recvmess, 20, 0);
 			//Sleep(1);
-			get_time(&t_new);
-			printf("i recv:%s at %d:%d\n", recvmess, t_new.second, t_new.millisecond);
+			get_time(&ttime);
+			fprintf(f, "%d:%d\n", ttime.second, ttime.millisecond);
+			printf("i recv:%s at %d:%d\n", recvmess, ttime.second, ttime.millisecond);
 		}
+		fclose(f);
 	}
 
 	return 0;
@@ -95,6 +106,12 @@ void get_time(struct timer *t)
 	t->millisecond = t1.wMilliseconds;
 
 }
-char* get_time_str(char *s,struct timer t) {
+char* get_delayfile_path(char *s,struct timer t) {
+	char* file_name = (char*)malloc(sizeof(char) * 10);
+	itoa((int)t.second,file_name, 10);
+	strcat(file_name, ".txt");
+	*s = '\0';
+	strcpy(s, delay_file_path);
+	strcat(s, file_name);
 	return s;
 }
