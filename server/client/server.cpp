@@ -25,13 +25,6 @@ int main(int argc,char **argv) {
 	int cnt = 30;//发送次数
 	if (argc >1 && !str_2ip_port(argv[1], &ip, &port))
 	{
-		//打开文件记录30次通信信息
-		get_time(&ttime);
-		char* file = (char*)malloc(sizeof(char) * 12);
-		get_delayfile_path(file, ttime);
-		FILE* f = fopen(file, "w");
-		if (f == NULL) { printf("file feiled\n"); return 0; }
-
 
 		//windows启动 socket服务
 		WSADATA wsaData;
@@ -64,6 +57,14 @@ int main(int argc,char **argv) {
 			printf("accept feiled\n");
 			return 0;
 		}
+
+
+		//打开文件记录30次通信信息
+		get_time(&ttime);
+		char* file = (char*)malloc(sizeof(char) * 12);
+		get_delayfile_path(file, ttime);
+		FILE* f = fopen(file, "w");
+		if (f == NULL) { printf("file feiled\n"); return 0; }
 
 		char message[] = "Hello World!";
 		char* recvmess = (char*)malloc(sizeof(message));
