@@ -11,3 +11,5 @@
 ③多次（不少于10次，每次测试不少于30个样本点数据）测试，完成延时变化图表和统计平均延时，以及分析延时变化特点
 *测试与某台指定计算机之间的延时（该计算机已实现在指定端口上，将收到的测试报文直接回送）
 
+![FUQG}1$Y~TVQ8NR03RTO6EE](https://user-images.githubusercontent.com/84824717/193838708-4565e8d4-8f8e-4dc5-80dd-15189ef2e338.png)
+![3(F~M4~)G})_DLR}P4Q8{V7](https://user-images.githubusercontent.com/84824717/193838804-810bbc92-81b8-49c5-97ec-15803f3e77cb.png)
