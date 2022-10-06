@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b35146a4-3377-49a7-89b0-ad6c3a13dbf6" name="Default Changelist" comment="" />
+    <list default="true" id="b35146a4-3377-49a7-89b0-ad6c3a13dbf6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../client/client/.vs/client/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../client/client/.vs/client/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/client/.vs/client/v17/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../client/client/.vs/client/v17/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delay_shoow.py" beforeDir="false" afterPath="$PROJECT_DIR$/delay_shoow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.vs/client/FileContentIndex/1b9261fc-97d6-47ae-a72e-3efd2508bf98.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.vs/client/FileContentIndex/4531ead2-6658-4760-9af4-31442af67fd8.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.vs/client/FileContentIndex/eeb510de-18d3-492d-aeb8-b21dee59a970.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.vs/client/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.vs/client/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.vs/client/v17/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.vs/client/v17/Browse.VC.db" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,21 +83,21 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="508" y="262" key="#Notifications/0.0.1280.800@0.0.1280.800" timestamp="1664853098875" />
-    <state width="1246" height="203" key="GridCell.Tab.0.bottom" timestamp="1664891898415">
+    <state width="606" height="205" key="GridCell.Tab.0.bottom" timestamp="1665046102888">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1246" height="203" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1664891898415" />
-    <state width="1246" height="203" key="GridCell.Tab.0.center" timestamp="1664891898415">
+    <state width="606" height="205" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1665046102888" />
+    <state width="606" height="205" key="GridCell.Tab.0.center" timestamp="1665046102888">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1246" height="203" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1664891898415" />
-    <state width="1246" height="203" key="GridCell.Tab.0.left" timestamp="1664891898415">
+    <state width="606" height="205" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1665046102888" />
+    <state width="606" height="205" key="GridCell.Tab.0.left" timestamp="1665046102888">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1246" height="203" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1664891898415" />
-    <state width="1246" height="203" key="GridCell.Tab.0.right" timestamp="1664891898415">
+    <state width="606" height="205" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1665046102888" />
+    <state width="606" height="205" key="GridCell.Tab.0.right" timestamp="1665046102888">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1246" height="203" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1664891898415" />
+    <state width="606" height="205" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1665046102888" />
   </component>
 </project>

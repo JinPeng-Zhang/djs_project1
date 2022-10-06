@@ -1,8 +1,8 @@
 import  os
 import  matplotlib.pyplot as plt
+import numpy as np
 path = "../delay"
 list = os.listdir(path)
-print(list)
 cnt = 0
 
 class tim():
@@ -20,7 +20,10 @@ class tim():
         self.delay = (int(self.second[1])-int(self.second[0]))*1000 + \
                      (int(self.msecond[1])-int(self.msecond[0]))
 
+num = 0
+
 for file_name  in  list:
+    num += 1
     file = open(path+'/'+file_name,'r')
     delay = []
     for  i in file.readlines():
@@ -28,6 +31,11 @@ for file_name  in  list:
         t.get_time(i)
         t.get_delay()
         delay.append(t.delay)
-        print(t.delay)
-    plt.plot(delay)
+
+    plt.plot(range(len(delay)),delay)
+    plt.plot(range(len(delay)),np.full(30,sum(delay)/len(delay),dtype=float))
+    print(f"{file_name}:average is {(float)(sum(delay)/len(delay))} ms")
+    plt.legend(('30times','average'))
+    plt.xlabel("number of times")
+    plt.ylabel("time/ms")
     plt.show()
