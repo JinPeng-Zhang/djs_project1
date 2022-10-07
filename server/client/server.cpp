@@ -7,8 +7,8 @@ int str_2ip_port(char* str, char** ip, int* port);
 void get_time(struct timer *t);
 //将一个timer结构体转化为 “second.txt”字符串
 char* get_delayfile_path(char* s, struct timer t);
-//延时测量结果保存路径
-char delay_file_path[] = "D:\\djs_project1\\delay\\";
+//延时测量结果保存路径,相对于“快速执行文件夹”
+char delay_file_path[] = "../delay/";
 struct timer {
 	time_t second;
 	WORD millisecond;

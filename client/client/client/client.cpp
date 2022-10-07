@@ -3,7 +3,7 @@
 #include <time.h>
 //消息长度最大值
 #define mess_max 512
-
+//
 int str_2ip_port(char* str, char** ip, int* port);
 void get_time(struct timer* t);
 struct timer {
